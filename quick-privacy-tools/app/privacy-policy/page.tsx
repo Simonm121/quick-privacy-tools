@@ -1,31 +1,25 @@
 export default function PrivacyPolicyPage() {
   return (
-    <main className="mx-auto max-w-3xl px-6 py-16 text-slate-200">
-      <h1 className="mb-6 text-4xl font-bold text-white">Privacy Policy</h1>
+    <main className="max-w-3xl mx-auto px-6 py-16 text-slate-300">
+      <h1 className="text-3xl font-bold mb-6 text-white">Privacy Policy</h1>
 
       <p className="mb-4">
-        Quick Privacy Tools provides free browser-based privacy and security tools.
-        We aim to collect as little personal information as possible.
+        Quick Privacy Tools does not collect, store, or share personal data.
       </p>
 
-      <h2 className="mt-8 mb-3 text-2xl font-semibold text-white">Data We Store</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2 text-white">Local Processing</h2>
       <p className="mb-4">
-        We do not store passwords, files, browser fingerprints, or tool results entered into our tools.
-        Where possible, tools run locally in your browser.
+        All tools run locally in your browser wherever possible. This means your data stays on your device and is not sent to any servers.
       </p>
 
-      <h2 className="mt-8 mb-3 text-2xl font-semibold text-white">Analytics and Ads</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2 text-white">No Tracking</h2>
       <p className="mb-4">
-        In the future, we may use analytics and advertising services such as Google Analytics
-        or Google AdSense. These services may use cookies or similar technologies.
+        We do not use tracking cookies, analytics tools, or third-party scripts that collect personal information.
       </p>
 
-      <h2 className="mt-8 mb-3 text-2xl font-semibold text-white">Contact</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2 text-white">Contact</h2>
       <p>
-        If you have questions, contact us at:{" "}
-        <a className="text-blue-400 hover:text-blue-300" href="mailto:hello@quickprivacytools.com">
-          hello@quickprivacytools.com
-        </a>
+        If you have any questions, you can contact us at hello@quickprivacytools.com
       </p>
     </main>
   );
