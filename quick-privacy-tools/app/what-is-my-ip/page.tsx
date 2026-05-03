@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Info, ToolShell } from "@/components/ui";
 
@@ -37,8 +38,9 @@ export default function Page() {
         </h2>
 
         <p>
-          Your IP address is the public address websites see when your device connects to the internet.
-          It can reveal basic information such as your network, internet provider, and approximate location.
+          Your IP address is the public address websites see when your device
+          connects to the internet. It can reveal basic information such as your
+          network, internet provider, and approximate location.
         </p>
 
         <h2 className="text-2xl font-bold text-white">
@@ -46,8 +48,9 @@ export default function Page() {
         </h2>
 
         <p>
-          Checking your IP address is useful when testing a VPN, troubleshooting a connection,
-          checking your public network identity, or confirming whether your real IP address is hidden.
+          Checking your IP address is useful when testing a VPN, troubleshooting
+          a connection, checking your public network identity, or confirming
+          whether your real IP address is hidden.
         </p>
 
         <h2 className="text-2xl font-bold text-white">
@@ -55,8 +58,50 @@ export default function Page() {
         </h2>
 
         <p>
-          Quick Privacy Tools does not store your IP address. This page simply displays your current public IP address.
+          Quick Privacy Tools does not store your IP address. This page simply
+          displays your current public IP address.
         </p>
+
+        <div className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
+          <h2 className="text-2xl font-bold text-white">
+            Related privacy tools
+          </h2>
+
+          <p className="mt-3">
+            After checking your IP address, you can use these tools to learn
+            more about your connection and online privacy.
+          </p>
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/ip-location-checker"
+            >
+              IP Location Checker
+            </Link>
+
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/vpn-leak-test"
+            >
+              VPN Leak Test
+            </Link>
+
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/browser-fingerprint-test"
+            >
+              Browser Fingerprint Test
+            </Link>
+
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/dns-lookup"
+            >
+              DNS Lookup
+            </Link>
+          </div>
+        </div>
       </section>
     </ToolShell>
   );

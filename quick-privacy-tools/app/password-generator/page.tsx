@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button, ToolShell } from "@/components/ui";
 
@@ -62,6 +63,47 @@ export default function Page() {
           password is created in your browser and disappears when you leave or
           refresh the page.
         </p>
+
+        <div className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
+          <h2 className="text-2xl font-bold text-white">
+            Related password and privacy tools
+          </h2>
+
+          <p className="mt-3">
+            After generating a strong password, you can check password strength,
+            create a private username, or review other privacy signals.
+          </p>
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/password-strength-checker"
+            >
+              Password Strength Checker
+            </Link>
+
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/username-generator"
+            >
+              Username Generator
+            </Link>
+
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/email-breach-checker"
+            >
+              Email Breach Checker
+            </Link>
+
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/metadata-remover"
+            >
+              Metadata Remover
+            </Link>
+          </div>
+        </div>
       </section>
     </ToolShell>
   );

@@ -25,7 +25,6 @@ const categories = [
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
-      {/* HERO */}
       <section className="relative overflow-hidden px-6 py-16 md:py-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.25),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.18),transparent_35%)]" />
         <div className="relative mx-auto max-w-7xl text-center">
@@ -38,7 +37,9 @@ export default function HomePage() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
-            Check your IP, test your VPN, generate secure passwords and protect your data — no tracking, no signup, everything runs locally where possible.
+            Check your IP, test your VPN, generate secure passwords and protect
+            your data — no tracking, no signup, everything runs locally where
+            possible.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm font-semibold text-slate-200">
@@ -49,16 +50,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* AD SPACE (INVISIBLE) */}
       <section className="px-6 pb-8">
-        <div className="h-24 md:h-32 w-full" />
+        <div className="h-24 w-full md:h-32" />
       </section>
 
-      {/* TOOLS */}
       <section className="px-6 pb-12">
         <div className="mx-auto max-w-7xl">
           {categories.map(([id, label]) => {
             const categoryTools = tools.filter((tool) => tool[4] === id);
+
             return (
               <div key={id} id={id} className="mb-14 scroll-mt-24">
                 <h2 className="mb-5 text-2xl font-bold">{label}</h2>
@@ -78,12 +78,10 @@ export default function HomePage() {
             );
           })}
 
-          {/* AD SPACE (INVISIBLE) */}
-          <div className="h-24 md:h-32 w-full" />
+          <div className="h-24 w-full md:h-32" />
         </div>
       </section>
 
-      {/* SEO INTRO */}
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl space-y-5 text-slate-300">
           <h2 className="text-3xl font-bold text-white">
@@ -91,16 +89,48 @@ export default function HomePage() {
           </h2>
 
           <p>
-            Quick Privacy Tools is a collection of simple browser-based tools designed to help you check your online privacy, security, and public internet information quickly.
+            Quick Privacy Tools is a collection of simple browser-based tools
+            designed to help you check your online privacy, security, and public
+            internet information quickly.
           </p>
 
           <p>
-            You can check your public IP address, review your approximate IP location, test whether your VPN is showing the expected location, inspect common browser fingerprint details, generate stronger passwords, and look up DNS or domain information.
+            You can check your public IP address, review your approximate IP
+            location, test whether your VPN is showing the expected location,
+            inspect common browser fingerprint details, generate stronger
+            passwords, and look up DNS or domain information.
           </p>
 
           <p>
-            The goal is to make everyday privacy checks fast, clear, and accessible without requiring an account or complicated setup.
+            The goal is to make everyday privacy checks fast, clear, and
+            accessible without requiring an account or complicated setup.
           </p>
+
+          <div className="rounded-3xl border border-white/10 bg-slate-900/60 p-6">
+            <h3 className="text-2xl font-bold text-white">
+              Popular privacy tools
+            </h3>
+
+            <p className="mt-3">
+              Start with these quick checks to understand what your browser,
+              device, and internet connection may reveal online.
+            </p>
+
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <Link className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15" href="/what-is-my-ip">
+                What Is My IP Address
+              </Link>
+              <Link className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15" href="/vpn-leak-test">
+                VPN Leak Test
+              </Link>
+              <Link className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15" href="/password-generator">
+                Password Generator
+              </Link>
+              <Link className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15" href="/metadata-remover">
+                Metadata Remover
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </main>
