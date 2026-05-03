@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef, useState } from "react";
 import { Button, Info, ToolShell } from "@/components/ui";
 
@@ -95,6 +96,47 @@ export default function Page() {
           No. This tool previews your image locally in your browser. Your image
           is not uploaded to our servers.
         </p>
+
+        <div className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
+          <h2 className="text-2xl font-bold text-white">
+            Related privacy tools
+          </h2>
+
+          <p className="mt-3">
+            Use these tools to check your IP address, review browser fingerprint
+            details, and test your VPN connection before sharing files online.
+          </p>
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/what-is-my-ip"
+            >
+              What Is My IP Address
+            </Link>
+
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/browser-fingerprint-test"
+            >
+              Browser Fingerprint Test
+            </Link>
+
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/vpn-leak-test"
+            >
+              VPN Leak Test
+            </Link>
+
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/username-generator"
+            >
+              Username Generator
+            </Link>
+          </div>
+        </div>
       </section>
     </ToolShell>
   );
