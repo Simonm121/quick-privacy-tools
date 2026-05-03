@@ -1,22 +1,34 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { Info, ToolShell } from "@/components/ui";
 
 export default function Page() {
-  const [rows, setRows] = useState<Array<[string, string]>>([]);
+  const [ip, setIp] = useState("Loading...");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setRows([
-      ["Status", "Basic version ready"],
-      ["Tool", "What Is My IP Address"],
-      ["Upgrade", "Connect a production API or advanced browser test later"],
-    ]);
+    fetch("https://api.ipify.org?format=json")
+      .then((res) => res.json())
+      .then((data) => {
+        setIp(data.ip);
+        setLoading(false);
+      })
+      .catch(() => {
+        setIp("Unable to fetch IP");
+        setLoading(false);
+      });
   }, []);
 
   return (
-    <ToolShell title="What Is My IP Address" icon="🌐" intro="See your public IP address and browser details instantly.">
+    <ToolShell
+      title="What Is My IP Address"
+      icon="🌐"
+      intro="See your public IP address instantly."
+    >
       <div className="grid gap-3 md:grid-cols-2">
-        {rows.map(([label, value]) => <Info key={label} label={label} value={value} />)}
+        <Info label="Your IP Address" value={ip} />
+        <Info label="Status" value={loading ? "Loading..." : "Live"} />
       </div>
     </ToolShell>
   );
