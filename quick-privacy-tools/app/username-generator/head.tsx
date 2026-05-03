@@ -1,12 +1,11 @@
 export default function Head() {
   return (
     <>
-      <title>Username Generator (Random & Secure) | Quick Privacy Tools</title>
+      <title>Username Generator (Random Username Ideas) | Quick Privacy Tools</title>
       <meta
         name="description"
-        content="Generate random usernames instantly for social media, games, and accounts. Create unique usernames to protect your online privacy."
+        content="Generate random username ideas instantly for accounts, games, forums, and social profiles. Free username generator that runs in your browser."
       />
-      <meta name="robots" content="index, follow" />
     </>
   );
 }
