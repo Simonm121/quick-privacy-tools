@@ -77,7 +77,7 @@ export default function Page() {
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             <Link
               className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
-              href="/password-strength-checker"
+              href="/password-checker"
             >
               Password Strength Checker
             </Link>
