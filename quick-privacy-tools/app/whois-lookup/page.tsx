@@ -1,64 +1,98 @@
 "use client";
 
 import { useState } from "react";
-import { Info, ToolShell } from "@/components/ui";
+import { Button, Info, ToolShell } from "@/components/ui";
 
 export default function Page() {
   const [domain, setDomain] = useState("");
   const [data, setData] = useState<any>(null);
-  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
 
-  const lookup = async () => {
-    if (!domain) return;
+  async function lookupDomain() {
+    const cleanDomain = domain
+      .trim()
+      .toLowerCase()
+      .replace(/^https?:\/\//, "")
+      .replace(/^www\./, "")
+      .split("/")[0];
 
-    setLoading(true);
-
-    try {
-      const res = await fetch(`https://api.api-ninjas.com/v1/whois?domain=${domain}`, {
-        headers: {
-          "X-Api-Key": "YOUR_API_KEY_HERE",
-        },
-      });
-
-      const result = await res.json();
-      setData(result);
-    } catch {
+    if (!cleanDomain.includes(".")) {
+      setStatus("Please enter a valid domain, for example: example.com");
       setData(null);
+      return;
     }
 
-    setLoading(false);
-  };
+    setStatus("Checking domain...");
+    setData(null);
+
+    try {
+      const response = await fetch(`https://rdap.org/domain/${cleanDomain}`);
+      const result = await response.json();
+
+      if (!response.ok) {
+        setStatus("No registration data found for this domain.");
+        return;
+      }
+
+      setData(result);
+      setStatus("Lookup complete.");
+    } catch {
+      setStatus("Unable to complete lookup. Please try again.");
+      setData(null);
+    }
+  }
+
+  const registrar =
+    data?.entities?.find((entity: any) =>
+      entity.roles?.includes("registrar")
+    )?.vcardArray?.[1]?.find((item: any) => item[0] === "fn")?.[3] || "-";
+
+  const created =
+    data?.events?.find((event: any) => event.eventAction === "registration")
+      ?.eventDate || "-";
+
+  const updated =
+    data?.events?.find((event: any) => event.eventAction === "last changed")
+      ?.eventDate || "-";
+
+  const expires =
+    data?.events?.find((event: any) => event.eventAction === "expiration")
+      ?.eventDate || "-";
 
   return (
     <ToolShell
       title="Whois Lookup"
       icon="🔍"
-      intro="Enter a domain to check basic registration details."
+      intro="Check public domain registration information using RDAP."
     >
-      <div className="flex gap-3 mb-6">
+      <div className="flex flex-col gap-3 md:flex-row">
         <input
           type="text"
           placeholder="example.com"
           value={domain}
           onChange={(e) => setDomain(e.target.value)}
-          className="px-3 py-2 rounded bg-slate-800 text-white w-full"
+          className="flex-1 rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-white outline-none focus:border-blue-400"
         />
-        <button
-          onClick={lookup}
-          className="bg-blue-600 px-4 py-2 rounded text-white"
-        >
-          Search
-        </button>
+
+        <Button onClick={lookupDomain}>Lookup Domain</Button>
       </div>
 
-      <div className="grid gap-3 md:grid-cols-2">
-        <Info label="Domain" value={data?.domain_name || "-"} />
-        <Info label="Registrar" value={data?.registrar || "-"} />
-        <Info label="Creation Date" value={data?.creation_date || "-"} />
-        <Info label="Expiry Date" value={data?.expiration_date || "-"} />
-      </div>
+      {status && (
+        <div className="mt-5 rounded-2xl border border-white/10 bg-slate-900/70 p-4 text-slate-200">
+          {status}
+        </div>
+      )}
 
-      {loading && <p className="mt-4 text-sm text-slate-400">Loading...</p>}
+      {data && (
+        <div className="mt-6 grid gap-3 md:grid-cols-2">
+          <Info label="Domain" value={data.ldhName || data.handle || "-"} />
+          <Info label="Registrar" value={registrar} />
+          <Info label="Created" value={created} />
+          <Info label="Updated" value={updated} />
+          <Info label="Expires" value={expires} />
+          <Info label="RDAP Source" value="rdap.org" />
+        </div>
+      )}
     </ToolShell>
   );
 }
