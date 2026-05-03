@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { Button, Info, ToolShell } from "@/components/ui";
 
@@ -101,6 +102,47 @@ export default function Page() {
           domain settings, and checking whether DNS changes have propagated
           correctly.
         </p>
+
+        <div className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
+          <h2 className="text-2xl font-bold text-white">
+            Related domain tools
+          </h2>
+
+          <p className="mt-3">
+            Use these tools to check domain registration details, review your IP
+            address, and test your connection privacy.
+          </p>
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/whois-lookup"
+            >
+              Whois Lookup
+            </Link>
+
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/what-is-my-ip"
+            >
+              What Is My IP Address
+            </Link>
+
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/ip-location-checker"
+            >
+              IP Location Checker
+            </Link>
+
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/vpn-leak-test"
+            >
+              VPN Leak Test
+            </Link>
+          </div>
+        </div>
       </section>
     </ToolShell>
   );
