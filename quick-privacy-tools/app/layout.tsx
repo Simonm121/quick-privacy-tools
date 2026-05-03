@@ -34,17 +34,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Search Console Verification */}
         <meta
           name="google-site-verification"
-          content="Y6z-8ccv0vQdPuP"
+          content="Y6z-8ccv0vQdPuPiTiMw0HegVEbIU79tc7uLoJSqLLc"
         />
 
-        {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-B8QH1JC9JV"
           strategy="afterInteractive"
         />
+
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
