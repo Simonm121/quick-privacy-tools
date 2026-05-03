@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { Button, ToolShell } from "@/components/ui";
 
@@ -108,6 +109,47 @@ export default function Page() {
           Yes. This tool runs in your browser and generates usernames locally.
           Your generated username is not uploaded to our servers.
         </p>
+
+        <div className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
+          <h2 className="text-2xl font-bold text-white">
+            Related privacy tools
+          </h2>
+
+          <p className="mt-3">
+            Use these tools to create secure passwords, check password strength,
+            and review other privacy signals.
+          </p>
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/password-generator"
+            >
+              Password Generator
+            </Link>
+
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/password-checker"
+            >
+              Password Strength Checker
+            </Link>
+
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/email-breach-checker"
+            >
+              Email Breach Checker
+            </Link>
+
+            <Link
+              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+              href="/metadata-remover"
+            >
+              Metadata Remover
+            </Link>
+          </div>
+        </div>
       </section>
     </ToolShell>
   );
