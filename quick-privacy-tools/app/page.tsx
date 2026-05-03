@@ -25,9 +25,10 @@ const categories = [
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
+
+      {/* HERO */}
       <section className="relative overflow-hidden px-6 py-16 md:py-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.25),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.18),transparent_35%)]" />
-
         <div className="relative mx-auto max-w-7xl text-center">
           <div className="mx-auto mb-6 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300">
             Fast checks. No login. Built for everyday privacy tasks.
@@ -38,8 +39,7 @@ export default function HomePage() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
-            Check your IP, test your VPN, generate secure passwords and protect your data — no tracking, no signup,
-            everything runs locally where possible.
+            Check your IP, test your VPN, generate secure passwords and protect your data — no tracking, no signup, everything runs locally where possible.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm font-semibold text-slate-200">
@@ -50,17 +50,16 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* AD SPACE (INVISIBLE) */}
       <section className="px-6 pb-8">
-        <div className="mx-auto max-w-7xl rounded-3xl border border-dashed border-white/15 bg-slate-900/80 p-6 text-center text-sm text-slate-400">
-          Ad Banner Placeholder
-        </div>
+        <div className="h-24 md:h-32 w-full" />
       </section>
 
+      {/* TOOLS */}
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-7xl">
           {categories.map(([id, label]) => {
             const categoryTools = tools.filter((tool) => tool[4] === id);
-
             return (
               <div key={id} id={id} className="mb-14 scroll-mt-24">
                 <h2 className="mb-5 text-2xl font-bold">{label}</h2>
@@ -80,11 +79,11 @@ export default function HomePage() {
             );
           })}
 
-          <div className="rounded-3xl border border-dashed border-white/15 bg-slate-900/80 p-6 text-center text-sm text-slate-400">
-            Ad Banner Placeholder
-          </div>
+          {/* AD SPACE (INVISIBLE) */}
+          <div className="h-24 md:h-32 w-full" />
         </div>
       </section>
+
     </main>
   );
 }
