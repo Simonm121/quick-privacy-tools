@@ -1,22 +1,33 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { Info, ToolShell } from "@/components/ui";
 
 export default function Page() {
-  const [rows, setRows] = useState<Array<[string, string]>>([]);
+  const [data, setData] = useState<any>(null);
 
   useEffect(() => {
-    setRows([
-      ["Status", "Basic version ready"],
-      ["Tool", "Browser Fingerprint Test"],
-      ["Upgrade", "Connect a production API or advanced browser test later"],
-    ]);
+    const info = {
+      userAgent: navigator.userAgent,
+      platform: navigator.platform,
+      language: navigator.language,
+      screen: `${window.screen.width} x ${window.screen.height}`,
+    };
+
+    setData(info);
   }, []);
 
   return (
-    <ToolShell title="Browser Fingerprint Test" icon="🧪" intro="See common browser and device signals that websites can use to identify or segment visitors.">
+    <ToolShell
+      title="Browser Fingerprint Test"
+      icon="🧪"
+      intro="See what your browser reveals about you."
+    >
       <div className="grid gap-3 md:grid-cols-2">
-        {rows.map(([label, value]) => <Info key={label} label={label} value={value} />)}
+        <Info label="User Agent" value={data?.userAgent || "Loading..."} />
+        <Info label="Platform" value={data?.platform || "-"} />
+        <Info label="Language" value={data?.language || "-"} />
+        <Info label="Screen Size" value={data?.screen || "-"} />
       </div>
     </ToolShell>
   );
