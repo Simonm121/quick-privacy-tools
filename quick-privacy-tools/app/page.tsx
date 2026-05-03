@@ -25,7 +25,6 @@ const categories = [
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
-
       {/* HERO */}
       <section className="relative overflow-hidden px-6 py-16 md:py-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.25),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.18),transparent_35%)]" />
@@ -56,7 +55,7 @@ export default function HomePage() {
       </section>
 
       {/* TOOLS */}
-      <section className="px-6 pb-20">
+      <section className="px-6 pb-12">
         <div className="mx-auto max-w-7xl">
           {categories.map(([id, label]) => {
             const categoryTools = tools.filter((tool) => tool[4] === id);
@@ -84,6 +83,26 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* SEO INTRO */}
+      <section className="px-6 pb-20">
+        <div className="mx-auto max-w-4xl space-y-5 text-slate-300">
+          <h2 className="text-3xl font-bold text-white">
+            Free online privacy and security tools
+          </h2>
+
+          <p>
+            Quick Privacy Tools is a collection of simple browser-based tools designed to help you check your online privacy, security, and public internet information quickly.
+          </p>
+
+          <p>
+            You can check your public IP address, review your approximate IP location, test whether your VPN is showing the expected location, inspect common browser fingerprint details, generate stronger passwords, and look up DNS or domain information.
+          </p>
+
+          <p>
+            The goal is to make everyday privacy checks fast, clear, and accessible without requiring an account or complicated setup.
+          </p>
+        </div>
+      </section>
     </main>
   );
 }
