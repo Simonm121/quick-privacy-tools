@@ -7,10 +7,23 @@ import CookieBanner from "@/components/CookieBanner";
 
 export const metadata: Metadata = {
   title: {
-    default: "Quick Privacy Tools — Free Privacy, IP & Security Tools",
+    default: "Quick Privacy Tools — Free Online Privacy & Security Tools",
     template: "%s | Quick Privacy Tools",
   },
-  description: "Free privacy tools that run instantly in your browser.",
+  description:
+    "Free online privacy and security tools including IP checker, VPN leak test, browser fingerprint test, password tools, DNS lookup and Whois lookup.",
+  keywords: [
+    "privacy tools",
+    "what is my IP",
+    "IP checker",
+    "VPN leak test",
+    "browser fingerprint test",
+    "password generator",
+    "password strength checker",
+    "DNS lookup",
+    "Whois lookup",
+    "online security tools",
+  ],
 };
 
 export default function RootLayout({
