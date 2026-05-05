@@ -4,19 +4,19 @@ import { buildPageMetadata } from "@/lib/page-metadata";
 export const metadata = buildPageMetadata({
   absoluteTitle: "Quick Privacy Tools | Free Online Privacy & Security Tools",
   description:
-    "Free online privacy and security tools to check your IP, test your VPN, inspect browser fingerprinting, generate passwords, and look up DNS and Whois data.",
+    "Free online privacy and security tools to check your IP, review VPN-visible location, inspect browser fingerprinting, generate passwords, and look up DNS and Whois data.",
   path: "/",
 });
 
 const tools = [
   ["🌐", "What Is My IP Address", "See your public IP instantly.", "/what-is-my-ip", "ip-tools"],
   ["📍", "IP Location Checker", "Find your IP location and ISP details.", "/ip-location-checker", "ip-tools"],
-  ["🛡️", "VPN Leak Test", "Detect IP, DNS and WebRTC leaks.", "/vpn-leak-test", "ip-tools"],
+  ["🛡️", "VPN Leak Test", "Check the IP, location, and ISP your VPN exposes.", "/vpn-leak-test", "ip-tools"],
   ["🧪", "Browser Fingerprint Test", "See what your browser reveals about you.", "/browser-fingerprint-test", "privacy"],
   ["🔑", "Password Generator", "Generate strong passwords instantly.", "/password-generator", "passwords"],
   ["🔐", "Password Strength Checker", "Check if your password is weak or secure.", "/password-checker", "passwords"],
-  ["📧", "Email Breach Checker", "Check if your email may have been exposed.", "/email-breach-checker", "privacy"],
-  ["📂", "Metadata Remover", "Remove hidden image data before sharing.", "/metadata-remover", "privacy"],
+  ["📧", "Email Breach Checker", "Validate an email and follow a trusted live breach check.", "/email-breach-checker", "privacy"],
+  ["📂", "Metadata Remover", "Preview image details and learn what metadata may be exposed.", "/metadata-remover", "privacy"],
   ["🎲", "Username Generator", "Generate clean username ideas instantly.", "/username-generator", "privacy"],
   ["🔍", "Whois Lookup", "Check domain ownership and registration details.", "/whois-lookup", "domain"],
   ["📡", "DNS Lookup", "Lookup A, MX, TXT, NS and CNAME records.", "/dns-lookup", "domain"],
@@ -45,14 +45,14 @@ export default function HomePage() {
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
             Check your IP, test your VPN, generate secure passwords and protect
-            your data — no tracking, no signup, everything runs locally where
-            possible.
+            your data. Many tools run locally in your browser, and pages clearly
+            note when an outside lookup service is used.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm font-semibold text-slate-200">
-            <span className="rounded-full bg-white/10 px-4 py-2">✔ No data stored</span>
+            <span className="rounded-full bg-white/10 px-4 py-2">✔ No signup required</span>
             <span className="rounded-full bg-white/10 px-4 py-2">✔ Fast & free</span>
-            <span className="rounded-full bg-white/10 px-4 py-2">✔ Works in your browser</span>
+            <span className="rounded-full bg-white/10 px-4 py-2">✔ Clear privacy notes</span>
           </div>
         </div>
       </section>
