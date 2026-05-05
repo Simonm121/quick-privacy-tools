@@ -27,6 +27,12 @@ export default function Page() {
       icon="🌐"
       intro="Check your public IP address instantly and see what websites can detect when you connect online."
     >
+      <div className="mb-5 rounded-2xl border border-blue-500/30 bg-blue-500/10 p-4 text-sm text-blue-100">
+        This page requests your public IP address from ipify.org so it can show
+        you the address websites see. Quick Privacy Tools does not store your
+        result.
+      </div>
+
       <div className="grid gap-3 md:grid-cols-2">
         <Info label="Your IP Address" value={ip} />
         <Info label="Status" value={loading ? "Loading..." : "Live"} />
