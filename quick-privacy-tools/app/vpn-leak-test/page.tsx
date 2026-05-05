@@ -24,8 +24,13 @@ export default function Page() {
     <ToolShell
       title="VPN Leak Test"
       icon="🛡️"
-      intro="Check whether your visible IP address and location match your expected VPN location."
+      intro="Check the IP address, approximate location, and ISP your VPN currently exposes."
     >
+      <div className="mb-5 rounded-2xl border border-blue-500/30 bg-blue-500/10 p-4 text-sm text-blue-100">
+        This version checks your visible IP address, approximate location, and
+        ISP using ipapi.co. It does not yet run DNS leak or WebRTC leak tests.
+      </div>
+
       <div className="grid gap-3 md:grid-cols-2">
         <Info label="IP Address" value={loading ? "Loading..." : data?.ip || "Error"} />
         <Info label="Country" value={data?.country_name || "-"} />
@@ -46,7 +51,7 @@ export default function Page() {
         </p>
 
         <h2 className="text-2xl font-bold text-white">
-          How to use this VPN leak test
+          How to use this VPN check
         </h2>
 
         <p>
@@ -71,9 +76,19 @@ export default function Page() {
         </h2>
 
         <p>
-          This version checks your visible IP address, approximate location, and
-          ISP. A future upgrade can add WebRTC and DNS leak checks for deeper VPN
-          testing.
+          No. This version only checks your visible IP address, approximate
+          location, and ISP. A future upgrade can add WebRTC and DNS leak checks
+          for deeper VPN testing.
+        </p>
+
+        <h2 className="text-2xl font-bold text-white">
+          Does this page use an outside service?
+        </h2>
+
+        <p>
+          Yes. This page requests IP and location data from ipapi.co so it can
+          show you the same kind of location details many websites can see.
+          Quick Privacy Tools does not store your result.
         </p>
 
         <div className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
