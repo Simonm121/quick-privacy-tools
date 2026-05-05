@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Card } from "@/components/ui";
 import { buildPageMetadata } from "@/lib/page-metadata";
 
@@ -73,13 +72,13 @@ export default function HomePage() {
 
                 <div className="grid gap-5 md:grid-cols-3">
                   {categoryTools.map(([icon, title, desc, href]) => (
-                    <Link key={href} href={href} scroll={true}>
+                    <a key={href} href={href}>
                       <Card className="h-full cursor-pointer p-6 transition-all hover:-translate-y-1 hover:bg-slate-700/90 hover:shadow-blue-500/10">
                         <div className="text-3xl">{icon}</div>
                         <h3 className="mt-4 text-xl font-bold text-white">{title}</h3>
                         <p className="mt-3 leading-7 text-slate-300">{desc}</p>
                       </Card>
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>
@@ -125,34 +124,30 @@ export default function HomePage() {
             </p>
 
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              <Link
+              <a
                 className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
                 href="/what-is-my-ip"
-                scroll={true}
               >
                 What Is My IP Address
-              </Link>
-              <Link
+              </a>
+              <a
                 className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
                 href="/vpn-leak-test"
-                scroll={true}
               >
                 VPN Leak Test
-              </Link>
-              <Link
+              </a>
+              <a
                 className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
                 href="/password-generator"
-                scroll={true}
               >
                 Password Generator
-              </Link>
-              <Link
+              </a>
+              <a
                 className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
                 href="/metadata-remover"
-                scroll={true}
               >
                 Metadata Remover
-              </Link>
+              </a>
             </div>
           </div>
         </div>
