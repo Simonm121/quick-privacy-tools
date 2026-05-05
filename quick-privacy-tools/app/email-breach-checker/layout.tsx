@@ -2,9 +2,9 @@ import type { ReactNode } from "react";
 import { buildPageMetadata } from "@/lib/page-metadata";
 
 export const metadata = buildPageMetadata({
-  title: "Email Breach Checker",
+  title: "Email Breach Check Guide",
   description:
-    "Check whether an email address is ready for a breach lookup and learn safe next steps if exposure is a concern.",
+    "Validate an email address format and follow a privacy-safe next step for a real breach lookup.",
   path: "/email-breach-checker",
 });
 
