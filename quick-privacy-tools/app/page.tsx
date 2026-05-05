@@ -4,7 +4,7 @@ import { buildPageMetadata } from "@/lib/page-metadata";
 export const metadata = buildPageMetadata({
   absoluteTitle: "Quick Privacy Tools | Free Online Privacy & Security Tools",
   description:
-    "Free online privacy and security tools to check your IP, review VPN-visible location, inspect browser fingerprinting, generate passwords, and look up DNS and Whois data.",
+    "Free online privacy and security tools to check your IP, review VPN-visible location, inspect browser fingerprinting, generate passwords, remove image metadata, and look up DNS and Whois data.",
   path: "/",
 });
 
@@ -16,7 +16,7 @@ const tools = [
   ["🔑", "Password Generator", "Generate strong passwords instantly.", "/password-generator", "passwords"],
   ["🔐", "Password Strength Checker", "Check if your password is weak or secure.", "/password-checker", "passwords"],
   ["📧", "Email Breach Checker", "Validate an email and follow a trusted live breach check.", "/email-breach-checker", "privacy"],
-  ["📂", "Metadata Remover", "Preview image details and learn what metadata may be exposed.", "/metadata-remover", "privacy"],
+  ["📂", "Metadata Remover", "Remove hidden image data from JPG, PNG, and WEBP files.", "/metadata-remover", "privacy"],
   ["🎲", "Username Generator", "Generate clean username ideas instantly.", "/username-generator", "privacy"],
   ["🔍", "Whois Lookup", "Check domain ownership and registration details.", "/whois-lookup", "domain"],
   ["📡", "DNS Lookup", "Lookup A, MX, TXT, NS and CNAME records.", "/dns-lookup", "domain"],
@@ -105,7 +105,8 @@ export default function HomePage() {
             You can check your public IP address, review your approximate IP
             location, test whether your VPN is showing the expected location,
             inspect common browser fingerprint details, generate stronger
-            passwords, and look up DNS or domain information.
+            passwords, remove hidden image metadata, and look up DNS or domain
+            information.
           </p>
 
           <p>
