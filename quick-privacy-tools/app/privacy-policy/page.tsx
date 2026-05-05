@@ -34,6 +34,12 @@ export default function PrivacyPolicyPage() {
         those lookup results.
       </p>
 
+      <p className="mb-4">
+        The Email Breach Check Guide does not run a live breach lookup through
+        Quick Privacy Tools. It only checks whether the email format looks valid
+        and links you to a trusted outside service if you choose to continue.
+      </p>
+
       <h2 className="mt-8 mb-2 text-xl font-semibold text-white">
         Analytics
       </h2>
