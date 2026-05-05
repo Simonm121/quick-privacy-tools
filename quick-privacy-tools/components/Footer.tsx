@@ -17,7 +17,8 @@ export default function Footer() {
         </div>
 
         <p className="text-xs text-slate-500">
-          All tools run locally in your browser. We do not store your data.
+          Many tools run locally in your browser. Pages note when an outside
+          lookup service is used.
         </p>
       </div>
     </footer>
