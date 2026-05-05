@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect } from "react";
 
 export function Card({
   children,
@@ -68,6 +71,10 @@ export function ToolShell({
   intro: string;
   children: React.ReactNode;
 }) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main className="min-h-screen bg-slate-950 px-6 pt-1 pb-12 text-white">
       <div className="mx-auto max-w-5xl">
