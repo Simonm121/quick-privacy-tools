@@ -27,8 +27,10 @@ export default function Page() {
       intro="Check the IP address, approximate location, and ISP your VPN currently exposes."
     >
       <div className="mb-5 rounded-2xl border border-blue-500/30 bg-blue-500/10 p-4 text-sm text-blue-100">
-        This version checks your visible IP address, approximate location, and
-        ISP using ipapi.co. It does not yet run DNS leak or WebRTC leak tests.
+        This page sends a request directly from your browser to ipapi.co so it
+        can show the visible IP address, approximate location, and ISP your VPN
+        currently exposes. Quick Privacy Tools does not store the result. This
+        version does not yet run DNS leak or WebRTC leak tests.
       </div>
 
       <div className="grid gap-3 md:grid-cols-2">
@@ -86,9 +88,8 @@ export default function Page() {
         </h2>
 
         <p>
-          Yes. This page requests IP and location data from ipapi.co so it can
-          show you the same kind of location details many websites can see.
-          Quick Privacy Tools does not store your result.
+          Yes. This page uses ipapi.co so it can show the same kind of location
+          details many websites can see.
         </p>
 
         <div className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
