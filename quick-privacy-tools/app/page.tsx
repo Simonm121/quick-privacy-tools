@@ -46,8 +46,8 @@ export default function HomePage() {
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
             Check your IP, test your VPN, generate secure passwords and protect
-            your data — no tracking, no signup, everything runs locally where
-            possible.
+            your data — no signup, minimal analytics only if you accept, and
+            local processing where possible.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm font-semibold text-slate-200">
