@@ -4,7 +4,7 @@ import { buildPageMetadata } from "@/lib/page-metadata";
 export const metadata = buildPageMetadata({
   title: "Browser Fingerprint Test",
   description:
-    "See what your browser reveals about your device, settings, and environment with a simple fingerprint test.",
+    "Free online browser fingerprint test to see what your browser, device, and settings reveal to websites.",
   path: "/browser-fingerprint-test",
 });
 
