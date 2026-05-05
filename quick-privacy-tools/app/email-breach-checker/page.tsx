@@ -17,7 +17,7 @@ export default function Page() {
     }
 
     setResult(
-      "This email format looks valid. Quick Privacy Tools does not run a live breach search yet. For a real breach result, use the trusted service linked below."
+      "This email format looks valid. Quick Privacy Tools does not run a live breach search yet. Use the trusted service linked below if you want a real breach result."
     );
   }
 
@@ -69,10 +69,9 @@ export default function Page() {
         </h2>
 
         <p>
-          An email breach check helps you find out whether an email address may
-          have appeared in a known data breach. Breaches can expose email
-          addresses, passwords, usernames, phone numbers, or other account
-          details.
+          This page is a simple privacy-first guide. It helps you make sure an
+          email address looks correctly formatted before you decide whether to
+          run a real breach lookup on a trusted outside service.
         </p>
 
         <h2 className="text-2xl font-bold text-white">
@@ -110,9 +109,19 @@ export default function Page() {
         </h2>
 
         <p>
-          No. This page does not store your email address. The current free
-          version only validates the email format and points you to a trusted
-          live breach checking service.
+          No. This page does not store your email address. The current guide
+          only validates the email format and points you to a trusted live
+          breach checking service.
+        </p>
+
+        <h2 className="text-2xl font-bold text-white">
+          Why keep this as a guide?
+        </h2>
+
+        <p>
+          Keeping this page as a guide is the simplest and safest version for
+          now. It avoids sending your email through Quick Privacy Tools while
+          still helping you take the next step safely.
         </p>
 
         <div className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
