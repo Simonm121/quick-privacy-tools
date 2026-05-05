@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 export function Card({
@@ -70,7 +72,7 @@ export function ToolShell({
 }) {
   return (
     <main className="min-h-screen bg-slate-950 px-6 pt-6 pb-12 text-white">
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-5xl animate-[toolPageIn_420ms_ease-out]">
         <Link
           href="/"
           className="mb-4 inline-block text-sm font-semibold text-blue-300 hover:text-blue-200"
@@ -97,6 +99,19 @@ export function ToolShell({
           {children}
         </Card>
       </div>
+
+      <style jsx global>{`
+        @keyframes toolPageIn {
+          from {
+            opacity: 0;
+            transform: translateY(18px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </main>
   );
 }
