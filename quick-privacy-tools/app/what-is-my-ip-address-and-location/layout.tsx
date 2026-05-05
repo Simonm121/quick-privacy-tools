@@ -4,7 +4,7 @@ import { buildPageMetadata } from "@/lib/page-metadata";
 export const metadata = buildPageMetadata({
   title: "What Is My IP Address and Location",
   description:
-    "See your public IP address and approximate location together in one quick privacy-focused check.",
+    "Free online tool to see your public IP address and approximate location together in one quick privacy check.",
   path: "/what-is-my-ip-address-and-location",
 });
 
