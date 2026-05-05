@@ -15,7 +15,7 @@ const tools = [
   ["🧪", "Browser Fingerprint Test", "See what your browser reveals about you.", "/browser-fingerprint-test", "privacy"],
   ["🔑", "Password Generator", "Generate strong passwords instantly.", "/password-generator", "passwords"],
   ["🔐", "Password Strength Checker", "Check if your password is weak or secure.", "/password-checker", "passwords"],
-  ["📧", "Email Breach Checker", "Validate an email and follow a trusted live breach check.", "/email-breach-checker", "privacy"],
+  ["📧", "Email Breach Check Guide", "Validate an email format and follow a trusted live breach check.", "/email-breach-checker", "privacy"],
   ["📂", "Metadata Remover", "Remove hidden image data from JPG, PNG, and WEBP files.", "/metadata-remover", "privacy"],
   ["🎲", "Username Generator", "Generate clean username ideas instantly.", "/username-generator", "privacy"],
   ["🔍", "Whois Lookup", "Check domain ownership and registration details.", "/whois-lookup", "domain"],
