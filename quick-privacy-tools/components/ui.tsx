@@ -69,7 +69,7 @@ export function ToolShell({
   children: React.ReactNode;
 }) {
   return (
-    <main className="min-h-screen bg-slate-950 px-6 pt-1 pb-12 text-white">
+    <main className="min-h-screen bg-slate-950 px-6 pt-6 pb-12 text-white">
       <div className="mx-auto max-w-5xl">
         <Link
           href="/"
