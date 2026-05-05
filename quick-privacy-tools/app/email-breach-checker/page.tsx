@@ -17,20 +17,21 @@ export default function Page() {
     }
 
     setResult(
-      "This email format looks valid. This free version does not search live breach databases yet. For a real breach result, use the official Have I Been Pwned website linked below."
+      "This email format looks valid. Quick Privacy Tools does not run a live breach search yet. For a real breach result, use the trusted service linked below."
     );
   }
 
   return (
     <ToolShell
-      title="Email Breach Checker"
+      title="Email Breach Check Guide"
       icon="📧"
-      intro="Validate an email address format and learn how to verify breach exposure safely."
+      intro="Validate an email address format and follow a privacy-safe next step for a real breach lookup."
     >
       <div className="mb-5 rounded-2xl border border-yellow-500/30 bg-yellow-500/10 p-4 text-sm text-yellow-100">
-        Free safe mode: this tool does not currently query live breach
-        databases. It only validates email format and links to a trusted live
-        breach checking service. We do not store your email.
+        Safe starting point: this page does not query live breach databases from
+        Quick Privacy Tools. It only checks whether the email format looks valid
+        and then links to a trusted live breach checking service. We do not
+        store your email.
       </div>
 
       <div className="flex flex-col gap-3 md:flex-row">
@@ -64,12 +65,12 @@ export default function Page() {
 
       <section className="mt-10 space-y-4 text-slate-300">
         <h2 className="text-2xl font-bold text-white">
-          Free Email Breach Checker
+          Free Email Breach Check Guide
         </h2>
 
         <p>
-          An email breach checker helps you find out whether an email address
-          may have appeared in a known data breach. Breaches can expose email
+          An email breach check helps you find out whether an email address may
+          have appeared in a known data breach. Breaches can expose email
           addresses, passwords, usernames, phone numbers, or other account
           details.
         </p>
@@ -79,9 +80,9 @@ export default function Page() {
         </h2>
 
         <p>
-          This version checks whether the email format looks valid and then
-          points you to a trusted live breach checking service. It does not run
-          a live breach search on Quick Privacy Tools yet.
+          This page checks whether the email format looks valid and then points
+          you to a trusted live breach checking service. It does not run a live
+          breach search on Quick Privacy Tools yet.
         </p>
 
         <h2 className="text-2xl font-bold text-white">
