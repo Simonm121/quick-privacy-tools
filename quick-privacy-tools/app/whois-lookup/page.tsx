@@ -67,9 +67,9 @@ export default function Page() {
       intro="Check public domain registration information using RDAP."
     >
       <div className="mb-5 rounded-2xl border border-blue-500/30 bg-blue-500/10 p-4 text-sm text-blue-100">
-        This page sends the domain you enter to rdap.org so public registration
-        details can be returned in your browser. Quick Privacy Tools does not
-        store the lookup result.
+        This page sends a request directly from your browser to rdap.org so the
+        public registration details for the domain can be returned here. Quick
+        Privacy Tools does not store the result.
       </div>
 
       <div className="flex flex-col gap-3 md:flex-row">
