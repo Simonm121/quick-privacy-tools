@@ -12,9 +12,20 @@ export default function PrivacyPolicyPage() {
         Local Processing
       </h2>
       <p className="mb-4">
-        All tools run locally in your browser wherever possible. This means your
-        data stays on your device unless a tool clearly relies on an outside
-        service to return a result.
+        Many tools on Quick Privacy Tools run locally in your browser. This
+        means your data stays on your device unless a page clearly relies on an
+        outside service to return a lookup result.
+      </p>
+
+      <h2 className="mt-8 mb-2 text-xl font-semibold text-white">
+        External Lookup Services
+      </h2>
+      <p className="mb-4">
+        Some tools need outside services to return information such as IP,
+        location, DNS, or domain registration results. When that happens, your
+        browser sends the lookup request directly to that third-party service so
+        the result can be shown on the page. Quick Privacy Tools does not store
+        those lookup results.
       </p>
 
       <h2 className="mt-8 mb-2 text-xl font-semibold text-white">
