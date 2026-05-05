@@ -20,8 +20,13 @@ export default function Page() {
     <ToolShell
       title="Metadata Remover"
       icon="📂"
-      intro="Check image file details before sharing photos online. Remove hidden metadata such as file information, camera details, and location data before uploading images publicly."
+      intro="Preview image details locally and learn what metadata may be present before sharing a file online."
     >
+      <div className="mb-5 rounded-2xl border border-yellow-500/30 bg-yellow-500/10 p-4 text-sm text-yellow-100">
+        This version previews image details locally in your browser. Metadata
+        removal is not available on this page yet.
+      </div>
+
       <div className="rounded-3xl border-2 border-dashed border-white/15 bg-slate-900/70 p-8 text-center">
         <input
           ref={fileRef}
@@ -68,24 +73,34 @@ export default function Page() {
       ) : null}
 
       <section className="mt-10 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
-        <h2 className="text-2xl font-bold">Free Image Metadata Remover</h2>
+        <h2 className="text-2xl font-bold">Free Image Metadata Preview</h2>
 
         <p className="mt-4 text-slate-300">
           Image files can contain hidden metadata, sometimes called EXIF data.
           This information may include the camera model, date taken, editing
-          software, and in some cases GPS location data. Checking and removing
-          metadata before sharing images can help protect your privacy.
+          software, and in some cases GPS location data. Checking metadata
+          before sharing images can help protect your privacy.
         </p>
 
         <h3 className="mt-6 text-xl font-semibold">
-          Why remove metadata from photos?
+          Why check metadata from photos?
         </h3>
 
         <p className="mt-3 text-slate-300">
           When you upload or send an image, hidden file details may be shared
-          with other people or websites. Removing image metadata is a simple
+          with other people or websites. Reviewing image metadata is a simple
           privacy step before posting photos online, sending screenshots, or
           sharing files publicly.
+        </p>
+
+        <h3 className="mt-6 text-xl font-semibold">
+          Does this tool remove metadata right now?
+        </h3>
+
+        <p className="mt-3 text-slate-300">
+          No. This version helps you preview file details locally in your
+          browser and understand what image metadata may be exposed. Removal is
+          planned for a future update.
         </p>
 
         <h3 className="mt-6 text-xl font-semibold">
