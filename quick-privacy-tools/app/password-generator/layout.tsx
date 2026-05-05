@@ -4,7 +4,7 @@ import { buildPageMetadata } from "@/lib/page-metadata";
 export const metadata = buildPageMetadata({
   title: "Password Generator",
   description:
-    "Generate strong passwords instantly in your browser with a fast, simple, privacy-friendly password tool.",
+    "Free online password generator that creates strong random passwords locally in your browser.",
   path: "/password-generator",
 });
 
