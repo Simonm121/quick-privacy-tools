@@ -4,7 +4,7 @@ import { buildPageMetadata } from "@/lib/page-metadata";
 export const metadata = buildPageMetadata({
   title: "What Is My IP Address",
   description:
-    "Check your public IP address instantly and see what websites can detect about your internet connection.",
+    "Free online IP checker to see your public IP address and understand what websites can detect about your connection.",
   path: "/what-is-my-ip",
 });
 
