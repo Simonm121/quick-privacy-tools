@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://quickprivacytools.com";
+const baseUrl = "https://www.quickprivacytools.com";
 
 const paths = [
   "",
