@@ -73,7 +73,7 @@ export default function HomePage() {
 
                 <div className="grid gap-5 md:grid-cols-3">
                   {categoryTools.map(([icon, title, desc, href]) => (
-                    <Link key={href} href={href}>
+                    <Link key={href} href={href} scroll={true}>
                       <Card className="h-full cursor-pointer p-6 transition-all hover:-translate-y-1 hover:bg-slate-700/90 hover:shadow-blue-500/10">
                         <div className="text-3xl">{icon}</div>
                         <h3 className="mt-4 text-xl font-bold text-white">{title}</h3>
