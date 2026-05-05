@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://quickprivacytools.com/sitemap.xml",
+    sitemap: "https://www.quickprivacytools.com/sitemap.xml",
   };
 }
