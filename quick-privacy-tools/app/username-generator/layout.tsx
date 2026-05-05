@@ -4,7 +4,7 @@ import { buildPageMetadata } from "@/lib/page-metadata";
 export const metadata = buildPageMetadata({
   title: "Username Generator",
   description:
-    "Generate simple, clean username ideas quickly for social accounts, logins, and online profiles.",
+    "Free online username generator for quick username ideas for accounts, games, and online profiles.",
   path: "/username-generator",
 });
 
