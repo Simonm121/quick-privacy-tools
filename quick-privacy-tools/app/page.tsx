@@ -46,8 +46,8 @@ export default function HomePage() {
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
             Check your IP, test your VPN, generate secure passwords and protect
-            your data — no signup, minimal analytics only if you accept, and
-            local processing where possible.
+            your data — no tracking, no signup, everything runs locally where
+            possible.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm font-semibold text-slate-200">
@@ -125,16 +125,32 @@ export default function HomePage() {
             </p>
 
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              <Link className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15" href="/what-is-my-ip">
+              <Link
+                className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+                href="/what-is-my-ip"
+                scroll={true}
+              >
                 What Is My IP Address
               </Link>
-              <Link className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15" href="/vpn-leak-test">
+              <Link
+                className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+                href="/vpn-leak-test"
+                scroll={true}
+              >
                 VPN Leak Test
               </Link>
-              <Link className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15" href="/password-generator">
+              <Link
+                className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+                href="/password-generator"
+                scroll={true}
+              >
                 Password Generator
               </Link>
-              <Link className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15" href="/metadata-remover">
+              <Link
+                className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
+                href="/metadata-remover"
+                scroll={true}
+              >
                 Metadata Remover
               </Link>
             </div>
