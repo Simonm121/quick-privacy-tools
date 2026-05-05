@@ -25,11 +25,12 @@ export default function Page() {
     <ToolShell
       title="Email Breach Checker"
       icon="📧"
-      intro="Check whether an email address is ready for a breach lookup and learn how to verify exposure safely."
+      intro="Validate an email address format and learn how to verify breach exposure safely."
     >
       <div className="mb-5 rounded-2xl border border-yellow-500/30 bg-yellow-500/10 p-4 text-sm text-yellow-100">
         Free safe mode: this tool does not currently query live breach
-        databases. We do not store your email.
+        databases. It only validates email format and links to a trusted live
+        breach checking service. We do not store your email.
       </div>
 
       <div className="flex flex-col gap-3 md:flex-row">
@@ -41,7 +42,7 @@ export default function Page() {
           className="flex-1 rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-white outline-none focus:border-blue-400"
         />
 
-        <Button onClick={checkEmail}>Check Email</Button>
+        <Button onClick={checkEmail}>Check Format</Button>
       </div>
 
       {result && (
@@ -71,6 +72,16 @@ export default function Page() {
           may have appeared in a known data breach. Breaches can expose email
           addresses, passwords, usernames, phone numbers, or other account
           details.
+        </p>
+
+        <h2 className="text-2xl font-bold text-white">
+          What does this page do right now?
+        </h2>
+
+        <p>
+          This version checks whether the email format looks valid and then
+          points you to a trusted live breach checking service. It does not run
+          a live breach search on Quick Privacy Tools yet.
         </p>
 
         <h2 className="text-2xl font-bold text-white">
