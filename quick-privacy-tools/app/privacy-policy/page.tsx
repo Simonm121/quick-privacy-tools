@@ -17,6 +17,12 @@ export default function PrivacyPolicyPage() {
         outside service to return a lookup result.
       </p>
 
+      <p className="mb-4">
+        For example, the Metadata Remover tool creates a cleaned copy of your
+        image in your browser so hidden metadata can be removed without
+        uploading the file to our servers.
+      </p>
+
       <h2 className="mt-8 mb-2 text-xl font-semibold text-white">
         External Lookup Services
       </h2>
