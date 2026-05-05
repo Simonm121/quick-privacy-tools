@@ -4,7 +4,7 @@ import { buildPageMetadata } from "@/lib/page-metadata";
 export const metadata = buildPageMetadata({
   title: "IP Location Checker",
   description:
-    "Find your approximate IP location, internet provider, and connection details with a quick browser-based check.",
+    "Free online IP location checker to see your approximate country, region, city, and internet provider.",
   path: "/ip-location-checker",
 });
 
