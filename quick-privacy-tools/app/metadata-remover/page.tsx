@@ -10,6 +10,19 @@ function formatFileSize(bytes: number) {
   return `${(bytes / 1024 / 1024).toFixed(2)} MB`;
 }
 
+function formatSizeDifference(originalBytes: number, cleanedBytes: number) {
+  const difference = cleanedBytes - originalBytes;
+
+  if (difference === 0) {
+    return "No size change";
+  }
+
+  const direction = difference > 0 ? "larger" : "smaller";
+  const amount = formatFileSize(Math.abs(difference));
+
+  return `${amount} ${direction} than the original`;
+}
+
 function buildCleanFileName(file: File) {
   const dotIndex = file.name.lastIndexOf(".");
 
@@ -60,18 +73,31 @@ export default function Page() {
     setCleanedSize(0);
   }
 
+  function resetAll() {
+    if (preview) {
+      URL.revokeObjectURL(preview);
+    }
+
+    resetCleanedOutput();
+    setFile(null);
+    setPreview("");
+    setProcessing(false);
+    setMessage("");
+    setError("");
+
+    if (fileRef.current) {
+      fileRef.current.value = "";
+    }
+  }
+
   function handleFile(selectedFile?: File) {
     if (!selectedFile) return;
 
     if (!SUPPORTED_TYPES.has(selectedFile.type)) {
-      setFile(null);
-      if (preview) {
-        URL.revokeObjectURL(preview);
-      }
-      setPreview("");
-      resetCleanedOutput();
-      setMessage("");
-      setError("Please choose a JPG, PNG, or WEBP image. GIF and other formats are not supported yet.");
+      resetAll();
+      setError(
+        "Please choose a JPG, PNG, or WEBP image. GIF, HEIC, SVG, and other formats are not supported yet."
+      );
       return;
     }
 
@@ -130,7 +156,9 @@ export default function Page() {
           setCleanedUrl(nextUrl);
           setCleanedFileName(buildCleanFileName(file));
           setCleanedSize(blob.size);
-          setMessage("Clean image ready. The downloaded copy is re-saved in your browser without the original metadata block.");
+          setMessage(
+            "Clean image ready. The downloaded copy is re-saved in your browser without the original metadata block."
+          );
         },
         outputType,
         quality
@@ -171,11 +199,19 @@ export default function Page() {
         <p className="mt-2 text-sm text-slate-400">
           The image stays on your device while a cleaned download is created.
         </p>
+        <p className="mt-2 text-xs text-slate-500">
+          Supported formats: JPG, PNG, WEBP.
+        </p>
 
         <div className="mt-5 flex flex-wrap justify-center gap-3">
-          <Button onClick={() => fileRef.current?.click()}>Choose image</Button>
+          <Button onClick={() => fileRef.current?.click()}>
+            {file ? "Choose another image" : "Choose image"}
+          </Button>
           <Button onClick={removeMetadata} disabled={!file || processing}>
             {processing ? "Cleaning..." : "Remove Metadata"}
+          </Button>
+          <Button onClick={resetAll} disabled={!file && !error && !message} className="bg-slate-700 hover:bg-slate-600">
+            Start over
           </Button>
         </div>
       </div>
@@ -229,8 +265,14 @@ export default function Page() {
                 <div className="mt-4 grid gap-3">
                   <Info label="Clean file name" value={cleanedFileName} />
                   <Info label="Clean file size" value={formatFileSize(cleanedSize)} />
+                  <Info label="Size change" value={formatSizeDifference(file.size, cleanedSize)} />
                   <Info label="Output type" value={file.type || "Unknown"} />
                 </div>
+
+                <p className="mt-4 text-sm text-slate-400">
+                  File size can go up or down after cleaning because the browser
+                  re-saves the image while removing the original metadata block.
+                </p>
 
                 <a
                   href={cleanedUrl}
@@ -276,7 +318,8 @@ export default function Page() {
 
         <p className="mt-3 text-slate-300">
           This version supports JPG, PNG, and WEBP images. Some formats, such as
-          animated GIF files, need different handling and are not supported yet.
+          animated GIF files, HEIC images, and SVG files, need different
+          handling and are not supported yet.
         </p>
 
         <h3 className="mt-6 text-xl font-semibold">
