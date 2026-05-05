@@ -28,9 +28,9 @@ export default function Page() {
       intro="Check your public IP address instantly and see what websites can detect when you connect online."
     >
       <div className="mb-5 rounded-2xl border border-blue-500/30 bg-blue-500/10 p-4 text-sm text-blue-100">
-        This page requests your public IP address from ipify.org so it can show
-        you the address websites see. Quick Privacy Tools does not store your
-        result.
+        This page sends a request directly from your browser to ipify.org so it
+        can show the public IP address websites see. Quick Privacy Tools does
+        not store the result.
       </div>
 
       <div className="grid gap-3 md:grid-cols-2">
