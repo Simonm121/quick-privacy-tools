@@ -6,6 +6,7 @@ import Script from "next/script";
 import CookieBanner from "@/components/CookieBanner";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.quickprivacytools.com"),
   title: {
     default: "Quick Privacy Tools — Free Online Privacy & Security Tools",
     template: "%s | Quick Privacy Tools",
