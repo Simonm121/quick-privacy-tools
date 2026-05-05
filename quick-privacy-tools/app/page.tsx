@@ -1,5 +1,13 @@
 import Link from "next/link";
 import { Card } from "@/components/ui";
+import { buildPageMetadata } from "@/lib/page-metadata";
+
+export const metadata = buildPageMetadata({
+  absoluteTitle: "Quick Privacy Tools | Free Online Privacy & Security Tools",
+  description:
+    "Free online privacy and security tools to check your IP, test your VPN, inspect browser fingerprinting, generate passwords, and look up DNS and Whois data.",
+  path: "/",
+});
 
 const tools = [
   ["🌐", "What Is My IP Address", "See your public IP instantly.", "/what-is-my-ip", "ip-tools"],
