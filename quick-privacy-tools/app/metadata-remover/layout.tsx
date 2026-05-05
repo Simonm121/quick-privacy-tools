@@ -4,7 +4,7 @@ import { buildPageMetadata } from "@/lib/page-metadata";
 export const metadata = buildPageMetadata({
   title: "Metadata Remover",
   description:
-    "Remove hidden image metadata before sharing files and reduce the amount of personal information attached to them.",
+    "Free online metadata remover to clean hidden image data before sharing photos and files.",
   path: "/metadata-remover",
 });
 
