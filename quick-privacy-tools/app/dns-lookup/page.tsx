@@ -41,9 +41,9 @@ export default function Page() {
       intro="Check DNS records such as A, MX, TXT, NS and CNAME for any domain."
     >
       <div className="mb-5 rounded-2xl border border-blue-500/30 bg-blue-500/10 p-4 text-sm text-blue-100">
-        This page sends DNS lookups to Google Public DNS so the requested
-        records can be returned in your browser. Quick Privacy Tools does not
-        store the result.
+        This page sends a request directly from your browser to Google Public
+        DNS so the DNS records you ask for can be returned here. Quick Privacy
+        Tools does not store the result.
       </div>
 
       <div className="flex flex-col gap-3 md:flex-row">
