@@ -27,8 +27,9 @@ export default function Page() {
       intro="Find your IP location, country, region and internet provider instantly."
     >
       <div className="mb-5 rounded-2xl border border-blue-500/30 bg-blue-500/10 p-4 text-sm text-blue-100">
-        This page uses ipapi.co to look up your visible IP address, approximate
-        location, and ISP. Quick Privacy Tools does not store the result.
+        This page sends a request directly from your browser to ipapi.co so it
+        can show your visible IP address, approximate location, and ISP. Quick
+        Privacy Tools does not store the result.
       </div>
 
       <div className="grid gap-3 md:grid-cols-2">
