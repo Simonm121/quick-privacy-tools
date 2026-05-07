@@ -29,6 +29,22 @@ const categories = [
   ["domain", "Domain"],
 ];
 
+function SisterSiteShield() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-5 w-5 fill-current"
+    >
+      <path d="M12 2l7 3v6c0 5.25-3.15 9.9-7 11-3.85-1.1-7-5.75-7-11V5l7-3z" />
+      <path
+        d="M10.7 12.9l-2-2 1.4-1.4 1.3 1.3 3.6-3.6 1.4 1.4-5 5a1 1 0 0 1-1.4 0z"
+        className="fill-slate-950"
+      />
+    </svg>
+  );
+}
+
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
@@ -150,6 +166,37 @@ export default function HomePage() {
                 Metadata Remover
               </a>
             </div>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-slate-900/60 p-6">
+            <div className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
+              Sister site
+            </div>
+
+            <p className="mt-3 text-sm leading-7 text-slate-300">
+              ScamCheckTool is part of the same wider group of simple,
+              trust-focused web tools.
+            </p>
+
+            <a
+              href="https://www.scamchecktool.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 flex max-w-sm items-start gap-3 rounded-lg border border-slate-800 bg-slate-950 px-4 py-4 transition hover:border-slate-700 hover:bg-slate-900"
+            >
+              <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-emerald-500 text-slate-950">
+                <SisterSiteShield />
+              </span>
+
+              <span className="min-w-0">
+                <span className="block text-sm font-extrabold text-white">
+                  ScamCheckTool
+                </span>
+                <span className="mt-1 block text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
+                  by Privacy Toolbox
+                </span>
+              </span>
+            </a>
           </div>
         </div>
       </section>
