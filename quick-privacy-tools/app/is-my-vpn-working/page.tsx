@@ -1,123 +1,60 @@
-import Link from "next/link";
-import { ToolShell } from "@/components/ui";
+import IsMyVpnWorkingClient from "@/components/IsMyVpnWorkingClient";
+import { buildPageMetadata } from "@/lib/page-metadata";
+
+export const metadata = buildPageMetadata({
+  absoluteTitle: "Is My VPN Working? | How To Check Your VPN Properly",
+  description:
+    "Learn how to check whether your VPN is hiding your real IP address and location, what results to expect, and what to do if your normal connection is still visible.",
+  path: "/is-my-vpn-working",
+});
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the fastest way to check if my VPN is working?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Run the VPN Leak Test while your VPN is connected and compare the visible IP address, location, and ISP with what you expect from your VPN server.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why does my VPN location look different from the server I picked?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "IP location databases are approximate, so a VPN server may appear in a nearby city or region even when the VPN is working normally.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "If my VPN changes my IP, is that enough?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It is a good sign, but not the full picture. A stronger check can also include DNS and WebRTC testing, which Quick Privacy Tools does not yet run on this page.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What should I do if my real ISP still appears?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Reconnect your VPN, switch servers, and test again. If your real ISP still appears, the VPN may not be routing your traffic the way you expect.",
+      },
+    },
+  ],
+};
 
 export default function Page() {
   return (
-    <ToolShell
-      title="Is My VPN Working?"
-      icon="🛡️"
-      intro="Check if your VPN is hiding your real IP address and location correctly."
-    >
-      <section className="space-y-4 text-slate-300">
-        <h2 className="text-2xl font-bold text-white">
-          How do I know if my VPN is working?
-        </h2>
-
-        <p>
-          A VPN is working if your visible IP address and location are different
-          from your normal internet connection. When connected, websites should
-          see the VPN server instead of your real location.
-        </p>
-
-        <h2 className="text-2xl font-bold text-white">
-          Quick way to check your VPN
-        </h2>
-
-        <p>
-          Turn on your VPN and run a VPN leak test. If your IP address, country,
-          or ISP still match your real connection, your VPN may not be working
-          correctly.
-        </p>
-
-        <div className="rounded-3xl border border-white/10 bg-slate-900/60 p-6">
-          <h2 className="text-2xl font-bold text-white">
-            Test your VPN now
-          </h2>
-
-          <p className="mt-3">
-            Use our VPN Leak Test to check your IP address, location, and
-            internet provider while connected to your VPN.
-          </p>
-
-          <Link
-            href="/vpn-leak-test"
-            className="mt-5 inline-block rounded-2xl bg-blue-500 px-5 py-3 font-semibold text-white hover:bg-blue-400"
-          >
-            Run VPN Leak Test
-          </Link>
-        </div>
-
-        <h2 className="text-2xl font-bold text-white">
-          Signs your VPN is NOT working
-        </h2>
-
-        <p>
-          Your VPN may not be working properly if your real IP address, location,
-          or ISP is still visible. This can happen if the VPN disconnects, leaks
-          data, or is misconfigured.
-        </p>
-
-        <h2 className="text-2xl font-bold text-white">
-          What is a VPN leak?
-        </h2>
-
-        <p>
-          A VPN leak happens when your real IP address or network details are
-          exposed even while your VPN is active. Common leaks include IP leaks,
-          DNS leaks, and WebRTC leaks.
-        </p>
-
-        <h2 className="text-2xl font-bold text-white">
-          How to fix VPN issues
-        </h2>
-
-        <p>
-          To fix VPN issues, reconnect your VPN, switch servers, check your VPN
-          settings, or try a different VPN provider. Make sure your connection is
-          stable and properly configured.
-        </p>
-
-        <div className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
-          <h2 className="text-2xl font-bold text-white">
-            Related tools
-          </h2>
-
-          <p className="mt-3">
-            Use these tools to check your IP address, location, and browser
-            privacy signals.
-          </p>
-
-          <div className="mt-5 grid gap-3 sm:grid-cols-2">
-            <Link
-              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
-              href="/what-is-my-ip"
-            >
-              What Is My IP Address
-            </Link>
-
-            <Link
-              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
-              href="/ip-location-checker"
-            >
-              IP Location Checker
-            </Link>
-
-            <Link
-              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
-              href="/browser-fingerprint-test"
-            >
-              Browser Fingerprint Test
-            </Link>
-
-            <Link
-              className="rounded-2xl bg-white/10 p-4 font-semibold text-white hover:bg-white/15"
-              href="/dns-lookup"
-            >
-              DNS Lookup
-            </Link>
-          </div>
-        </div>
-      </section>
-    </ToolShell>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <IsMyVpnWorkingClient />
+    </>
   );
 }
