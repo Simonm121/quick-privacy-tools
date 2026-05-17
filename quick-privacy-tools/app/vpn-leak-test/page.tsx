@@ -2,9 +2,9 @@ import VpnLeakTestClient from "@/components/VpnLeakTestClient";
 import { buildPageMetadata } from "@/lib/page-metadata";
 
 export const metadata = buildPageMetadata({
-  absoluteTitle: "VPN Leak Test | Check Your Visible IP, ISP & Location",
+  absoluteTitle: "VPN Leak Test | Check Your Visible IP, ISP, Location & WebRTC",
   description:
-    "Check the public IP address, approximate location, and ISP your VPN currently exposes. Use the result to compare your VPN server with the connection websites can see.",
+    "Check the public IP address, approximate location, ISP, and WebRTC addresses your VPN currently exposes. Use the result to compare your VPN server with the connection websites can see.",
   path: "/vpn-leak-test",
 });
 
@@ -17,7 +17,7 @@ const faqSchema = {
       name: "What does this VPN leak test check?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "This VPN leak test checks the public IP address, approximate location, and ISP or network owner that your browser currently exposes.",
+        text: "This VPN leak test checks the public IP address, approximate location, ISP or network owner, and WebRTC candidate addresses that your browser currently exposes.",
       },
     },
     {
@@ -25,23 +25,23 @@ const faqSchema = {
       name: "How do I know if my VPN is working?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Turn on your VPN and refresh the test. If the visible IP address, location, and ISP match your VPN server rather than your normal connection, your basic IP masking is likely working.",
+        text: "Turn on your VPN and refresh the test. If the visible IP address, location, and WebRTC public address match your VPN server rather than your normal connection, your setup is in better shape.",
       },
     },
     {
       "@type": "Question",
-      name: "Does this page test DNS leaks or WebRTC leaks?",
+      name: "What if WebRTC shows a different public IP?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. This version checks visible IP, approximate location, and ISP only. It does not currently run DNS leak or WebRTC leak checks.",
+        text: "That is a stronger sign of a leak. Reconnect the VPN, switch servers or protocols, and check whether your browser has WebRTC protections enabled.",
       },
     },
     {
       "@type": "Question",
-      name: "What should I do if my real location or ISP appears?",
+      name: "Does this page run a DNS leak test too?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Make sure your VPN is connected, try another VPN server, refresh the page, and compare the result with your normal IP address. If your real ISP still appears, your VPN may not be active or may not be routing traffic correctly.",
+        text: "Not yet. This page checks visible IP details and WebRTC exposure, but DNS leak testing is still a separate follow-up improvement.",
       },
     },
   ],
